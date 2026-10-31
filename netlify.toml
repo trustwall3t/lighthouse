@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Next.js inlines public env and bundles server config at build time.
+# These are site branding / public URL values, not credentials.
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "EMAIL_SITE_NAME,NEXT_PUBLIC_APP_URL"

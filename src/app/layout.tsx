@@ -9,6 +9,7 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { headers } from 'next/headers';
 import { Toaster } from '@/components/ui/sonner';
+import { DEFAULT_SITE_NAME } from '@/lib/site/default-brand';
 import './globals.css';
 
 const geistSans = Geist({
@@ -27,7 +28,7 @@ export async function generateViewport(): Promise<Viewport> {
 
 export const metadata: Metadata = {
 	title: {
-		default: 'Light House Wealth',
+		default: DEFAULT_SITE_NAME,
 		template: '%s',
 	},
 	description:

@@ -6,10 +6,11 @@ import {
 } from "@/lib/public/market-quotes-public";
 import { loadHomeTestimonials } from "@/lib/public/testimonials";
 import { SITE_LOGO_URL } from "@/lib/public/site-logo";
+import { DEFAULT_SITE_NAME } from "@/lib/site/default-brand";
 import type { HomeStats } from "@/types/site";
 
 const defaultSite: SiteInfo = {
-  siteName: "Light House Wealth",
+  siteName: DEFAULT_SITE_NAME,
   siteTitle: "Home",
   description: "",
   welcomeMessage: "Welcome. Trade live markets, forex, stocks, and commodities from your dashboard.",

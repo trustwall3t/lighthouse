@@ -1,15 +1,25 @@
+import { DEFAULT_SITE_NAME } from "@/lib/site/default-brand";
 import { FOOTER_RISK_WARNING } from "@/lib/public/homepage-content";
 
+/** Public site URL for links in email (runtime env; avoid marking as a Netlify "secret"). */
 export function getAppUrl(): string {
-  const explicit = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
-  if (explicit) return explicit;
-  const vercel = process.env.VERCEL_URL;
-  if (vercel) return `https://${vercel.replace(/\/$/, "")}`;
+  const fromPublic = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
+  if (fromPublic) return fromPublic;
+
+  const netlify =
+    process.env.URL?.replace(/\/$/, "") ||
+    process.env.DEPLOY_PRIME_URL?.replace(/\/$/, "");
+  if (netlify) return netlify;
+
+  const vercel = process.env.VERCEL_URL?.replace(/\/$/, "");
+  if (vercel) return `https://${vercel}`;
+
   return "http://localhost:3000";
 }
 
+/** Display name in email footers — prefer admin Site Settings in DB; no secret env var. */
 export function getEmailSiteName(): string {
-  return process.env.EMAIL_SITE_NAME?.trim() || "Light House Wealth";
+  return DEFAULT_SITE_NAME;
 }
 
 export function getEmailLogoUrl(): string {

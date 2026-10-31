@@ -1,4 +1,6 @@
-const BRAND_DISPLAY = "Light House Wealth";
+import { DEFAULT_SITE_NAME } from "@/lib/site/default-brand";
+
+const BRAND_DISPLAY = DEFAULT_SITE_NAME;
 
 type FixOptions = {
   siteName: string;

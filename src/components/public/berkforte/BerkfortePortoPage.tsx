@@ -10,6 +10,7 @@ import { BerkforteWordRotator } from "@/components/public/berkforte/BerkforteWor
 import { renderBerkfortePortoPageHtml } from "@/lib/berkforte/load-page";
 import type { BerkfortePublicSlug } from "@/lib/berkforte/slugs";
 import { SITE_LOGO_URL } from "@/lib/public/site-logo";
+import { DEFAULT_SITE_NAME } from "@/lib/site/default-brand";
 import type { HomeStats } from "@/types/site";
 
 type Props = {
@@ -23,7 +24,7 @@ type Props = {
 export function BerkfortePortoPage({
   slug,
   logoUrl = SITE_LOGO_URL,
-  siteName = "Light House Wealth",
+  siteName = DEFAULT_SITE_NAME,
   contactEmail = null,
   stats = null,
 }: Props) {

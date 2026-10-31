@@ -31,6 +31,12 @@ npm run build:berkforte-marketing   # requires BERKFORTE_ROOT
 npm run sync:berkforte-public
 ```
 
+## Netlify deploy
+
+- Install the [Next.js plugin](https://docs.netlify.com/integrations/frameworks/next-js/) (`@netlify/plugin-nextjs`); `netlify.toml` is included.
+- Do **not** mark `NEXT_PUBLIC_APP_URL` or `EMAIL_SITE_NAME` as **secret** env vars (they are public site config). Prefer Netlify’s automatic `URL` for the app origin and set the display name in **Admin → Site settings** (or the default in code).
+- If secrets scanning still flags them, `netlify.toml` sets `SECRETS_SCAN_OMIT_KEYS` for those keys.
+
 ## Scripts
 
 | Script | Purpose |
