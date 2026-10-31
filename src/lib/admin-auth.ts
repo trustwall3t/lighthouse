@@ -31,7 +31,7 @@ export async function createAdminSession(adminId: string, email: string) {
 		secure: process.env.NODE_ENV === 'production',
 		sameSite: 'strict',
 		maxAge: 12 * 60 * 60, // 12 hours
-		// Must include /api/admin/* routes used by the admin dashboard (emit, etc.)
+		// Admin dashboard uses server actions; keep middleware on /admin only.
 		path: '/',
 	});
 	console.log('Admin session cookie set');

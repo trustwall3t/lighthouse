@@ -16,8 +16,6 @@ npm run db:seed-admin        # admin user (see prisma/seed-admin.ts)
 npm run db:seed-marketing-plans
 ```
 
-In local dev you can also use `POST /api/dev/seed-admin` and `POST /api/dev/seed-marketing-plans` when the dev server is running.
-
 ## Cron / ROI
 
 Daily on Vercel (`vercel.json`). Local test: `curl http://localhost:3000/api/cron/run-all` (dev may allow without `CRON_SECRET`).
