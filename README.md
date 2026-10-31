@@ -31,6 +31,17 @@ npm run build:berkforte-marketing   # requires BERKFORTE_ROOT
 npm run sync:berkforte-public
 ```
 
+## Vercel Hobby (12 serverless functions)
+
+This app is structured to stay under Vercel’s **12 function** limit:
+
+- One **`/api/[[...path]]`** handler (session, upload, cron, etc.)
+- One **`/dashboard/[[...segments]]`** router for all member pages
+- One **`/admin/dashboard/[[...segments]]`** router for admin pages
+- Marketing routes are **static/SSG** (no per-page lambdas)
+
+If you add new API routes or `page.tsx` files under `dashboard/`, use the existing catch-all routers instead.
+
 ## Netlify deploy
 
 - Install the [Next.js plugin](https://docs.netlify.com/integrations/frameworks/next-js/) (`@netlify/plugin-nextjs`); `netlify.toml` is included.

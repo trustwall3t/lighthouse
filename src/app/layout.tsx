@@ -1,75 +1,32 @@
-import DynamicStyles from '@/components/DynamicStyles';
-import { PublicDesktopLockLifecycle } from '@/components/public/PublicDesktopLockLifecycle';
-import SmartsuppScript from '@/components/SmartsuppScript';
-import { GoogleTranslateProvider } from '@/components/i18n/GoogleTranslateProvider';
-import { ThemeProvider } from '@/components/ThemeProvider';
-import { defaultAppViewport } from '@/lib/public/gg-viewport-server';
-import { isPublicMarketingRoute } from '@/lib/public/marketing-routes';
-import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import { headers } from 'next/headers';
-import { Toaster } from '@/components/ui/sonner';
-import { DEFAULT_SITE_NAME } from '@/lib/site/default-brand';
-import './globals.css';
-
-const geistSans = Geist({
-	subsets: ['latin'],
-	variable: '--font-geist-sans',
-});
-
-const geistMono = Geist_Mono({
-	subsets: ['latin'],
-	variable: '--font-geist-mono',
-});
+import { AppBodyShell } from "@/components/shell/AppBodyShell";
+import { defaultAppViewport } from "@/lib/public/gg-viewport-server";
+import { DEFAULT_SITE_NAME } from "@/lib/site/default-brand";
+import type { Metadata, Viewport } from "next";
+import "./globals.css";
 
 export async function generateViewport(): Promise<Viewport> {
-	return defaultAppViewport;
+  return defaultAppViewport;
 }
 
 export const metadata: Metadata = {
-	title: {
-		default: DEFAULT_SITE_NAME,
-		template: '%s',
-	},
-	description:
-		'Live trading, forex, stocks, commodities, investment plans, and member dashboard.',
+  title: {
+    default: DEFAULT_SITE_NAME,
+    template: "%s",
+  },
+  description:
+    "Live trading, forex, stocks, commodities, investment plans, and member dashboard.",
 };
 
-export default async function RootLayout({
-	children,
+export default function RootLayout({
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	const pathname = (await headers()).get('x-pathname') ?? '';
-	const isMarketing = isPublicMarketingRoute(pathname);
-
-	if (isMarketing) {
-		return (
-			<html lang='en' className='berkforte-html' suppressHydrationWarning>
-				<body className='berkforte-public' suppressHydrationWarning>
-					{children}
-				</body>
-			</html>
-		);
-	}
-
-	const bodyClass = [geistSans.variable, geistMono.variable, 'font-sans']
-		.filter(Boolean)
-		.join(' ');
-
-	return (
-		<html lang='en' suppressHydrationWarning>
-			<body className={bodyClass} suppressHydrationWarning>
-				<ThemeProvider>
-					<GoogleTranslateProvider>
-						<PublicDesktopLockLifecycle />
-						<DynamicStyles />
-						<SmartsuppScript />
-						{children}
-						<Toaster />
-					</GoogleTranslateProvider>
-				</ThemeProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <AppBodyShell>{children}</AppBodyShell>
+      </body>
+    </html>
+  );
 }
