@@ -1,4 +1,4 @@
-/* Light House Wealth — Porto layout fixes (SSR-safe; do not rely on theme.js for visibility) */
+/* Pinnacle Wealth FX — Porto layout fixes (SSR-safe; do not rely on theme.js for visibility) */
 
 .berkforte-porto-page .appear-animation,
 .berkforte-porto-page .block-appear-animation,
@@ -140,7 +140,7 @@ body.berkforte-public {
   top: 0 !important;
 }
 
-/* Light House Wealth Card — 3D credit card block */
+/* Pinnacle Wealth FX card — 3D credit card block */
 .berkforte-porto-page section:has(.carding) .row {
   align-items: center !important;
 }

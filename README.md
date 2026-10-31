@@ -1,4 +1,4 @@
-# Light House Wealth (parkins-trader)
+# Pinnacle Wealth FX (parkins-trader)
 
 Next.js app: marketing site, client dashboard (`/dashboard`), admin (`/admin`), auth (`/auth`). PostgreSQL via Prisma (Supabase).
 

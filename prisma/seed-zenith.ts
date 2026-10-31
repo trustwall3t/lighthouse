@@ -8,10 +8,10 @@ async function main() {
     where: { id: "default" },
     create: {
       id: "default",
-      siteName: "Apex Trade Zone",
+      siteName: "Pinnacle Wealth FX",
       currency: "$",
       welcomeMessage:
-        "Welcome to Apex Trade Zone — mirror trading and investment plans.",
+        "Welcome to Pinnacle Wealth FX — mirror trading and investment plans.",
       enableCopyTrading: true,
       enableSelfTrade: true,
       enableInvestmentPlans: true,

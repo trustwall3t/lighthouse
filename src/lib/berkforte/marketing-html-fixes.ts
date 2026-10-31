@@ -8,7 +8,7 @@ type FixOptions = {
   contactEmail: string;
 };
 
-/** Porto nav + Light House Wealth branding applied when serving cached HTML. */
+/** Porto nav + site branding applied when serving cached HTML. */
 export function applyMarketingHtmlFixes(html: string, opts: FixOptions): string {
   let out = html;
 
@@ -60,17 +60,23 @@ export function applyMarketingHtmlFixes(html: string, opts: FixOptions): string 
   out = out.replace(/src=""\s*>/g, `src="${opts.logoUrl}">`);
 
   const brandPatterns: [RegExp, string][] = [
+    [/Light House Wealth Limited/gi, `${BRAND_DISPLAY} Limited`],
+    [/Light House Wealth/gi, BRAND_DISPLAY],
     [/Berk Forte Limited/gi, `${BRAND_DISPLAY} Limited`],
     [/Berk Forte/gi, BRAND_DISPLAY],
     [/Berk forte/gi, BRAND_DISPLAY],
     [/BerkForte/gi, BRAND_DISPLAY.replace(/\s/g, "")],
     [/© Berk Forte Copyright/gi, `© ${BRAND_DISPLAY} Copyright`],
+    [/© Light House Wealth Copyright/gi, `© ${BRAND_DISPLAY} Copyright`],
   ];
   for (const [pattern, repl] of brandPatterns) {
     out = out.replace(pattern, repl);
   }
 
-  out = out.replace(/operated by Light House Wealth Limited, registered in Singapore,\s*Canada and UK/gi, `operated by ${BRAND_DISPLAY}`);
+  out = out.replace(
+    /operated by (?:Light House Wealth|Berk Forte|Pinnacle Wealth FX) Limited, registered in Singapore,\s*Canada and UK/gi,
+    `operated by ${BRAND_DISPLAY}`,
+  );
 
   out = out.replaceAll(
     "col-9 col-lg-6 order-1 order-lg-2 scale-3 pb-5 pb-lg-0 mt-0 mt-md-4 mb-5 mb-lg-0",

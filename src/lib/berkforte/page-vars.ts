@@ -1,4 +1,5 @@
 import { applyMarketingHtmlFixes } from "@/lib/berkforte/marketing-html-fixes";
+import { DEFAULT_SITE_NAME } from "@/lib/site/default-brand";
 import type { HomeStats } from "@/types/site";
 
 type InjectOptions = {
@@ -10,8 +11,8 @@ type InjectOptions = {
 };
 
 export function injectBerkfortePageVars(html: string, opts: InjectOptions): string {
-  const siteName = opts.siteName || "Light House Wealth";
-  const contactEmail = opts.contactEmail?.trim() || "support@lighthousewealth.com";
+  const siteName = opts.siteName || DEFAULT_SITE_NAME;
+  const contactEmail = opts.contactEmail?.trim() || "support@pinnaclewealthfx.com";
 
   let out = html.replaceAll("{{LOGO_URL}}", opts.logoUrl).replaceAll("{{SITE_NAME}}", siteName);
 

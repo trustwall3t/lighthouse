@@ -22,7 +22,7 @@ export type AppEmailLayoutOptions = {
   badge?: string;
 };
 
-/** Table-based HTML for Light House Wealth client & admin emails. */
+/** Table-based HTML for Pinnacle Wealth FX client & admin emails. */
 export function renderAppEmailLayout(options: AppEmailLayoutOptions): string {
   const siteName = escapeHtml(getEmailSiteName());
   const logoUrl = escapeHtml(getEmailLogoUrl());

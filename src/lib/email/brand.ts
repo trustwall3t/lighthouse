@@ -1,4 +1,4 @@
-/** Light House Wealth — aligned with dashboard globals & marketing `.btn-primary`. */
+/** Pinnacle Wealth FX — aligned with dashboard globals & marketing `.btn-primary`. */
 export const EMAIL_BRAND = {
   primary: "#0088cc",
   primaryDark: "#0077b3",
