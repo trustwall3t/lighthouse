@@ -106,7 +106,7 @@ export default async function InvestmentPlansPage() {
             {plans.length === 0 ? (
               <p className="text-muted-foreground text-sm">
                 No plans in database. Run{" "}
-                <code className="text-xs">npm run db:seed-zenith</code>.
+                <code className="text-xs">npm run db:seed</code>.
               </p>
             ) : null}
           </div>

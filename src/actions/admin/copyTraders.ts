@@ -58,7 +58,7 @@ export async function createCopyTraderAdmin(input: {
   const assetCount = await db.copyAsset.count({ where: { market } });
   if (assetCount === 0) {
     throw new Error(
-      `No copy assets for ${market}. Run db seed (npm run db:seed-zenith).`,
+      `No copy assets for ${market}. Run db seed (npm run db:seed).`,
     );
   }
 

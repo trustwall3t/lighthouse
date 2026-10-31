@@ -115,8 +115,3 @@ export function renderAppEmailLayout(options: AppEmailLayoutOptions): string {
 </body>
 </html>`;
 }
-
-/** @deprecated Use renderAppEmailLayout */
-export const renderHanaEmailLayout = renderAppEmailLayout;
-
-export type HanaEmailLayoutOptions = AppEmailLayoutOptions;

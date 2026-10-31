@@ -1,7 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "./berkforte-guest-auth.css";
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -176,70 +174,57 @@
 }
 
 /* Sonner — in-app notifications */
-.app-toaster,
-.zenith-toaster {
+.app-toaster {
   --width: min(22.5rem, calc(100vw - 32px));
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   z-index: 100;
 }
 
-.app-toaster [data-sonner-toast][data-styled="true"],
-.zenith-toaster [data-sonner-toast][data-styled="true"] {
+.app-toaster [data-sonner-toast][data-styled="true"] {
   padding: 0;
   background: transparent;
   border: none;
   box-shadow: none;
 }
 
-.app-toast,
-.zenith-toast {
+.app-toast {
   border-color: var(--border);
 }
 
-.app-toast[data-type="success"],
-.zenith-toast[data-type="success"] {
+.app-toast[data-type="success"] {
   border-color: color-mix(in oklab, var(--success) 22%, var(--border));
 }
 
-.app-toast[data-type="error"],
-.zenith-toast[data-type="error"] {
+.app-toast[data-type="error"] {
   border-color: color-mix(in oklab, var(--destructive) 24%, var(--border));
 }
 
-.app-toast[data-type="warning"],
-.zenith-toast[data-type="warning"] {
+.app-toast[data-type="warning"] {
   border-color: color-mix(in oklab, #d97706 22%, var(--border));
 }
 
 .app-toast[data-type="info"],
 .app-toast[data-type="default"],
-.app-toast[data-type="loading"],
-.zenith-toast[data-type="info"],
-.zenith-toast[data-type="default"],
-.zenith-toast[data-type="loading"] {
+.app-toast[data-type="loading"] {
   border-color: color-mix(in oklab, var(--brand) 20%, var(--border));
 }
 
-.app-toaster [data-icon],
-.zenith-toaster [data-icon] {
+.app-toaster [data-icon] {
   margin: 0;
   width: auto;
   height: auto;
   background: transparent;
 }
 
-.app-toaster [data-content],
-.zenith-toaster [data-content] {
+.app-toaster [data-content] {
   align-self: center;
 }
 
-.app-toaster [data-sonner-toast][data-mounted="true"],
-.zenith-toaster [data-sonner-toast][data-mounted="true"] {
+.app-toaster [data-sonner-toast][data-mounted="true"] {
   animation: app-toast-in 0.28s cubic-bezier(0.21, 1.02, 0.37, 1) forwards;
 }
 
-.app-toaster [data-sonner-toast][data-removed="true"],
-.zenith-toaster [data-sonner-toast][data-removed="true"] {
+.app-toaster [data-sonner-toast][data-removed="true"] {
   animation: app-toast-out 0.18s ease-in forwards;
 }
 

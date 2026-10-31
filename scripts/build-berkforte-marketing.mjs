@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Builds static HTML for Berk Forte public pages from Laravel blades.
- * Output: src/content/berkforte/pages/{slug}.html (+ verify-guest.html)
+ * Output: src/content/berkforte/pages/{slug}.html
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -15,7 +15,6 @@ const berkRoot =
 
 const viewsHome = path.join(berkRoot, "resources/views/home");
 const basePath = path.join(berkRoot, "resources/views/layouts/base.blade.php");
-const verifyPath = path.join(viewsHome, "verify.blade.php");
 const outDir = path.join(root, "src/content/berkforte/pages");
 
 /** Next.js `[slug]` param → Laravel blade file */
@@ -148,16 +147,6 @@ for (const [slug, file] of Object.entries(PORTO_PAGES)) {
   const outPath = path.join(outDir, `${slug}.html`);
   fs.writeFileSync(outPath, html + "\n", "utf8");
   console.log(`Wrote ${outPath} (${html.length} chars)`);
-}
-
-if (fs.existsSync(verifyPath)) {
-  const verifyBlade = fs.readFileSync(verifyPath, "utf8");
-  const verifyContent = extractSection(verifyBlade);
-  if (verifyContent) {
-    const verifyHtml = postProcessHtml(verifyContent);
-    fs.writeFileSync(path.join(outDir, "verify-guest.html"), verifyHtml + "\n", "utf8");
-    console.log(`Wrote verify-guest.html (${verifyHtml.length} chars)`);
-  }
 }
 
 // Legacy single-file path (home) for older imports

@@ -205,7 +205,7 @@ export function CopyTradersAdminClient({ traders }: { traders: AdminTraderRow[] 
       {traders.length === 0 ? (
         <p className="text-sm text-muted-foreground">
           No traders yet. Create a profile or run{" "}
-          <code className="rounded bg-muted px-1">npm run db:seed-zenith</code>.
+          <code className="rounded bg-muted px-1">npm run db:seed</code>.
         </p>
       ) : (
         <ul className="space-y-3">

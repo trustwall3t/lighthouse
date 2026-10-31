@@ -8,7 +8,7 @@ import path from "node:path";
 
 const pagesDir = () => path.join(process.cwd(), "src/content/berkforte/pages");
 
-export function loadBerkfortePageHtml(slug: "home" | BerkfortePublicSlug | "verify-guest"): string {
+export function loadBerkfortePageHtml(slug: "home" | BerkfortePublicSlug): string {
   const file = path.join(pagesDir(), `${slug}.html`);
   return fs.readFileSync(file, "utf8");
 }

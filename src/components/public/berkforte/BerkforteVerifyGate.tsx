@@ -1,6 +1,8 @@
 "use client";
 
-import { BerkforteGuestAssets } from "@/components/public/berkforte/BerkforteGuestAssets";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { authSignupUrl } from "@/lib/public/auth-links";
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -26,61 +28,52 @@ export function BerkforteVerifyGate({ logoUrl, initialCode }: Props) {
   }
 
   return (
-    <>
-      <BerkforteGuestAssets />
-      <section
-        style={{ minHeight: "100vh" }}
-        className="d-flex align-items-center justify-content-center"
-      >
-        <div className="container">
-          <div className="pb-3 row justify-content-center">
-            <div className="col-12 col-md-6 col-lg-6 col-sm-10 col-xl-6">
-              <Link href="/">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={logoUrl} alt="" className="mb-3 img-fluid auth__logo" />
-              </Link>
-              <div className="shadow card bg-black border login-page roundedd border-1">
-                <div className="card-body">
-                  <h6 className="text-center text-white">
-                    Please confirm you are not a Robot by verifying the auto-generated code below.
-                    This will enable you to register.
-                  </h6>
-                  <form onSubmit={onSubmit} className="mt-4 login-form">
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        readOnly
-                        style={{ backgroundColor: "#3792cb" }}
-                        className="form-control border-none text-center text-white"
-                        value={hint}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label style={{ color: "#fff" }}>
-                        Enter code<span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={input}
-                        onChange={(e) => {
-                          setInput(e.target.value);
-                          setError(null);
-                        }}
-                        required
-                      />
-                    </div>
-                    {error ? <p className="text-danger small">{error}</p> : null}
-                    <button type="submit" className="btn btn-primary w-100">
-                      Verify &amp; continue
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-10">
+      <div className="w-full max-w-md space-y-6 rounded-lg border border-border bg-card p-8 text-card-foreground shadow-sm">
+        <Link href="/" className="mx-auto block w-fit">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoUrl} alt="" className="h-10 w-auto object-contain" />
+        </Link>
+        <div>
+          <h1 className="text-center text-lg font-semibold text-foreground">
+            Registration check
+          </h1>
+          <p className="mt-2 text-center text-sm text-muted-foreground">
+            Confirm you are not a robot by entering the code below. This step
+            is required before you can register.
+          </p>
         </div>
-      </section>
-    </>
+        <form onSubmit={onSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="hint-code">Your code</Label>
+            <Input
+              id="hint-code"
+              readOnly
+              className="bg-brand/10 text-center font-mono tracking-widest"
+              value={hint}
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="enter-code">
+              Enter code <span className="text-destructive">*</span>
+            </Label>
+            <Input
+              id="enter-code"
+              value={input}
+              onChange={(e) => {
+                setInput(e.target.value);
+                setError(null);
+              }}
+              required
+              autoComplete="off"
+            />
+          </div>
+          {error ? <p className="text-sm text-destructive">{error}</p> : null}
+          <Button type="submit" className="w-full">
+            Verify &amp; continue
+          </Button>
+        </form>
+      </div>
+    </div>
   );
 }
