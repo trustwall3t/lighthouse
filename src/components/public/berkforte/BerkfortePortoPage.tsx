@@ -4,6 +4,7 @@ import { BerkfortePortoAssets } from "@/components/public/berkforte/BerkfortePor
 import { BerkfortePortoReveal } from "@/components/public/berkforte/BerkfortePortoReveal";
 import { BerkforteGTranslate } from "@/components/public/berkforte/BerkforteGTranslate";
 import { BerkforteLangPicker } from "@/components/public/berkforte/BerkforteLangPicker";
+import { BerkfortePortoCounters } from "@/components/public/berkforte/BerkfortePortoCounters";
 import { BerkforteMobileNavFix } from "@/components/public/berkforte/BerkforteMobileNavFix";
 import { BerkforteTranslateOverlayFix } from "@/components/public/berkforte/BerkforteTranslateOverlayFix";
 import { BerkforteWordRotator } from "@/components/public/berkforte/BerkforteWordRotator";
@@ -42,6 +43,7 @@ export function BerkfortePortoPage({
       <BerkforteTranslateOverlayFix />
       <BerkforteLangPicker />
       <BerkforteMobileNavFix />
+      <BerkfortePortoCounters />
       <BerkfortePortoReveal />
       <BerkforteWordRotator />
       <div className="berkforte-porto-page" dangerouslySetInnerHTML={{ __html: html }} />

@@ -4,9 +4,15 @@ import {
 } from "@/app/(admin)/admin/dashboard/_screens/registry";
 import { notFound } from "next/navigation";
 
-type Props = { params: Promise<{ segments?: string[] }> };
+type Props = {
+  params: Promise<{ segments?: string[] }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
 
-export default async function AdminDashboardRouterPage({ params }: Props) {
+export default async function AdminDashboardRouterPage({
+  params,
+  searchParams,
+}: Props) {
   const { segments } = await params;
   const resolved = adminRouteKey(segments);
   if (!resolved) notFound();
@@ -19,5 +25,5 @@ export default async function AdminDashboardRouterPage({ params }: Props) {
 
   const mod = await ADMIN_SCREENS[resolved.key]();
   const Screen = mod.default;
-  return <Screen />;
+  return <Screen searchParams={searchParams} />;
 }

@@ -1,10 +1,10 @@
 import { BerkfortePortoPage } from "@/components/public/berkforte/BerkfortePortoPage";
-import { getPublicSite } from "@/lib/public/home-payload";
+import { getHomePayload, getPublicSite } from "@/lib/public/home-payload";
 
 export const revalidate = 60;
 
 export default async function MarketingHomePage() {
-  const site = await getPublicSite();
+  const [site, home] = await Promise.all([getPublicSite(), getHomePayload()]);
 
   return (
     <BerkfortePortoPage
@@ -12,6 +12,7 @@ export default async function MarketingHomePage() {
       logoUrl={site.logoUrl}
       siteName={site.siteName}
       contactEmail={site.contactEmail}
+      stats={home.stats}
     />
   );
 }

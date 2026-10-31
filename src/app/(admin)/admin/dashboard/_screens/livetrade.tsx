@@ -23,12 +23,15 @@ type UserData = {
 export default async function LiveTrade({
 	searchParams,
 }: {
-	searchParams: Promise<{ userId?: string }>;
+	searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
 	const users = await getAllUsers();
-	const params = await searchParams;
-	const selectedUser: UserData | null = params.userId
-		? users.find((user) => user.id === params.userId) || null
+	const query = await searchParams;
+	const userIdRaw = query.userId;
+	const userId =
+		typeof userIdRaw === "string" ? userIdRaw : userIdRaw?.[0];
+	const selectedUser: UserData | null = userId
+		? users.find((user) => user.id === userId) || null
 		: null;
 
 	return (

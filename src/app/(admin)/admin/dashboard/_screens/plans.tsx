@@ -136,13 +136,15 @@ function PlansTable({
 export default async function AdminInvestmentPlansPage({
   searchParams,
 }: {
-  searchParams: Promise<{ plan?: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const admin = await getAdminSession();
   if (!admin) redirect("/admin/login");
 
-  const params = await searchParams;
-  const planFilter = params.plan?.trim() || undefined;
+  const query = await searchParams;
+  const planRaw = query.plan;
+  const planFilter =
+    (typeof planRaw === "string" ? planRaw : planRaw?.[0])?.trim() || undefined;
 
   const [allPlans, activePlans, settings, roiRecords, roiActiveOnly] =
     await Promise.all([
