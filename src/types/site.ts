@@ -4,7 +4,7 @@ export type SiteInfo = {
   description: string;
   welcomeMessage: string;
   currency: string;
-  logoUrl: string | null;
+  logoUrl: string;
   googleTranslate: boolean;
   redirectUrl: string | null;
   contactEmail?: string | null;

@@ -109,7 +109,6 @@ const Toaster = ({ ...props }: ToasterProps) => {
 					</StatusIcon>
 				),
 			}}
-			closeButton
 			style={
 				{
 					"--normal-bg": "var(--card)",

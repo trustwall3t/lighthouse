@@ -30,7 +30,7 @@ export async function getPublicSite(): Promise<SiteInfo> {
       description: s.welcomeMessage,
       welcomeMessage: s.welcomeMessage,
       currency: s.currency,
-      logoUrl: SITE_LOGO_URL,
+      logoUrl: s.logoUrl ?? SITE_LOGO_URL,
       googleTranslate: s.googleTranslate,
       redirectUrl: null,
       contactEmail: s.contactEmail,
