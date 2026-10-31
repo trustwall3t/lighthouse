@@ -1,0 +1,38 @@
+import { FOOTER_RISK_WARNING } from "@/lib/public/homepage-content";
+
+export function getAppUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
+  if (explicit) return explicit;
+  const vercel = process.env.VERCEL_URL;
+  if (vercel) return `https://${vercel.replace(/\/$/, "")}`;
+  return "http://localhost:3000";
+}
+
+export function getEmailSiteName(): string {
+  return process.env.EMAIL_SITE_NAME?.trim() || "Light House Wealth";
+}
+
+export function getEmailLogoUrl(): string {
+  const custom = process.env.EMAIL_LOGO_URL?.trim();
+  if (custom) return custom;
+  return `${getAppUrl()}/logo.png`;
+}
+
+export function getFromAddress(): string {
+  const from = process.env.EMAIL_FROM?.trim().replace(/^['"]|['"]$/g, "");
+  if (from) return from;
+  const site = getEmailSiteName();
+  return `${site} <onboarding@resend.dev>`;
+}
+
+export function getReplyToAddress(): string | undefined {
+  return process.env.EMAIL_REPLY_TO?.trim() || process.env.EMAIL_FROM?.trim();
+}
+
+export function getAdminNotificationEmail(): string | undefined {
+  return process.env.ADMIN_NOTIFICATION_EMAIL?.trim();
+}
+
+export function getEmailRiskDisclaimer(): string {
+  return process.env.EMAIL_RISK_DISCLAIMER?.trim() || FOOTER_RISK_WARNING;
+}

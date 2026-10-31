@@ -1,0 +1,8 @@
+/* Silk Road / Hana Fidelity public marketing overrides */
+html.sr-desktop-boot:not(.sr-desktop-ready) body {
+  visibility: hidden;
+}
+
+body.sr-public {
+  margin: 0;
+}

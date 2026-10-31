@@ -1,0 +1,73 @@
+/* Language dropdown only — trigger layout matches Porto (.lhw-lang-trigger in lighthouse-nav.css) */
+
+.lhw-lang-picker-root {
+  position: relative;
+  display: inline-block;
+}
+
+.lhw-lang-picker__menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  z-index: 200020;
+  min-width: 220px;
+  max-height: min(320px, 70vh);
+  overflow: auto;
+  padding: 0.35rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.15rem;
+}
+
+.lhw-lang-picker__option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.875rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.lhw-lang-picker__option img {
+  display: block;
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.lhw-lang-picker__option:hover {
+  background: rgba(0, 178, 122, 0.08);
+  color: #222;
+}
+
+.lhw-lang-picker__option.is-active {
+  background: rgba(0, 178, 122, 0.12);
+  font-weight: 600;
+  color: #00b27a;
+}
+
+.lhw-gtranslate-engine-host {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+html.berkforte-html body.berkforte-public #defaultModal {
+  display: none !important;
+}

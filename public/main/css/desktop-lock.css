@@ -1,0 +1,147 @@
+/**
+ * Public site: always use desktop section layouts when html.sr-desktop-lock
+ * (viewport zoom-to-fit on phones). Loaded after site-modern.css.
+ */
+
+html.sr-desktop-lock .sr-hero-aside {
+  display: block !important;
+}
+
+html.sr-desktop-lock .sr-hero-layout,
+html.sr-desktop-lock .sr-split {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 2.5rem !important;
+  align-items: center !important;
+}
+
+html.sr-desktop-lock .sr-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+html.sr-desktop-lock .sr-stats {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+html.sr-desktop-lock .sr-plan-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1.25rem !important;
+}
+
+html.sr-desktop-lock .sr-footer-grid {
+  grid-template-columns: repeat(4, minmax(160px, 1fr)) !important;
+}
+
+html.sr-desktop-lock .sr-trust-bar-strip {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  gap: 1rem 1.75rem !important;
+}
+
+html.sr-desktop-lock .sr-partner-marquee {
+  flex: 1 1 auto !important;
+  width: auto !important;
+}
+
+html.sr-desktop-lock .sr-partner-marklist img {
+  height: 1.45rem !important;
+}
+
+html.sr-desktop-lock .sr-partner-marklist img.sr-partner-mark--wide {
+  height: 1.3rem !important;
+}
+
+html.sr-desktop-lock .sr-header-inner > .sr-nav {
+  margin-left: auto !important;
+}
+
+html.sr-desktop-lock .sr-nav-toggle {
+  display: none !important;
+}
+
+html.sr-desktop-lock .sr-nav {
+  display: flex !important;
+  position: static !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  padding: 0 !important;
+  border-bottom: none !important;
+  min-width: 0 !important;
+}
+
+html.sr-desktop-lock .sr-nav > a,
+html.sr-desktop-lock .sr-nav details > summary {
+  font-size: 0.8125rem !important;
+  padding: 0.35rem 0.45rem !important;
+}
+
+html.sr-desktop-lock .sr-header-inner {
+  flex-wrap: nowrap !important;
+  position: static !important;
+}
+
+html.sr-desktop-lock .sr-drop {
+  position: absolute !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid var(--sr-border) !important;
+  padding: 0.35rem !important;
+}
+
+/* Trustpilot — desktop grid, never mobile carousel */
+html.sr-desktop-lock .sr-tp-reviews-shell {
+  width: auto !important;
+  max-width: none !important;
+  max-height: 37.5rem !important;
+  margin-inline: 0 !important;
+  padding: 0.15rem !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+html.sr-desktop-lock .sr-tp-track {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-auto-flow: row !important;
+  gap: 1rem !important;
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  scroll-snap-type: none !important;
+  -webkit-overflow-scrolling: auto !important;
+  padding: 0.15rem !important;
+  flex-direction: unset !important;
+  flex-wrap: unset !important;
+}
+
+html.sr-desktop-lock .sr-hl-quad-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+html.sr-desktop-lock .sr-hl-steps {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+html.sr-desktop-lock .sr-hl-review-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+html.sr-desktop-lock .sr-hl-market-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+html.sr-desktop-lock .sr-tp-card {
+  display: flex !important;
+  flex: none !important;
+  flex-grow: unset !important;
+  flex-shrink: unset !important;
+  flex-basis: auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  scroll-snap-align: unset !important;
+}

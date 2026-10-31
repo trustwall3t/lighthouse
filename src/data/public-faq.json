@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "question": "What are digital options?",
+      "answer": "Option is a derivative financial instrument based on any underlying asset, such as a stock, a currency pair, oil, etc. Digital option is a non-standard option used to make a profit on price movements of such assets for a certain period of time."
+    },
+    {
+      "question": "What are the varieties of digital options?",
+      "answer": "Underlying assets usually include securities (shares of world companies), currency pairs (EUR/USD, GBP/USD, etc.), raw materials and precious metals (oil, gold, etc.), and indices (S&P 500, Dow, dollar index, etc.)."
+    },
+    {
+      "question": "What is the gist of digital options trading?",
+      "answer": "You determine whether the price of an asset will increase or decrease by the time the contract is executed. If your prognosis is correct, you receive a fixed income."
+    },
+    {
+      "question": "Is the download of the program to a computer or smartphone required?",
+      "answer": "No. You just need to register on the Company's website in the presented form and open an individual account."
+    },
+    {
+      "question": "Is there a minimum amount that I can deposit to my account at registration?",
+      "answer": "The minimum deposit is 10 US dollars."
+    },
+    {
+      "question": "How can I deposit?",
+      "answer": "Open the trade execution window and click the green Deposit button, or fund through your Personal Account profile. Choose a payment method, currency, enter the amount, and complete the payment form."
+    },
+    {
+      "question": "How long does it take to withdraw funds?",
+      "answer": "On average, withdrawal takes from one to five days from the date the request is received, depending on processing volume. The company always tries to pay on the day the request is received."
+    },
+    {
+      "question": "What is the minimum withdrawal amount?",
+      "answer": "The minimum withdrawal amount starts from 10 USD for most payment systems. For cryptocurrencies it starts from 50 USD (and may be higher for certain currencies e.g. Bitcoin)."
+    },
+    {
+      "question": "Do I need to provide any documents to make a withdrawal?",
+      "answer": "Usually additional documents are not needed, but the Company may request verification at its discretion to prevent fraud and comply with regulations."
+    },
+    {
+      "question": "What is account verification?",
+      "answer": "Verification is confirmation of your personal data by providing additional documents, such as a passport scan, selfie with ID, or proof of address."
+    },
+    {
+      "question": "How long does the verification process take?",
+      "answer": "No more than five business days from the date the Company receives the requested documents."
+    },
+    {
+      "question": "Can I close my account? How to do it?",
+      "answer": "You can delete an account in your Individual Account by clicking the Delete Account button at the bottom of the profile page."
+    }
+  ]
+}

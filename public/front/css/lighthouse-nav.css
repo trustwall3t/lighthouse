@@ -1,0 +1,238 @@
+/* Light House Wealth — Porto layout fixes (SSR-safe; do not rely on theme.js for visibility) */
+
+.berkforte-porto-page .appear-animation,
+.berkforte-porto-page .block-appear-animation,
+.berkforte-porto-page .block-appear-animation .block-appear-animation-wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Keep rotator visible; do not force all words opaque (breaks .word-rotator.slide cycling). */
+.berkforte-porto-page .word-rotator-words {
+  visibility: visible !important;
+}
+
+body.berkforte-public {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.berkforte-porto-page .main {
+  flex: 1 1 auto;
+  min-height: 1px;
+}
+
+@media (min-width: 992px) {
+  #header .header-nav-main nav.collapse {
+    display: flex !important;
+    visibility: visible !important;
+    height: auto !important;
+  }
+
+  #header .header-nav-main nav > ul > li > a.nav-link {
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 991px) {
+  #header .header-btn-collapse-nav {
+    margin-left: 0.5rem;
+  }
+
+  #header .header-nav-main nav#lhw-mobile-nav.collapse:not(.show) {
+    display: none !important;
+  }
+
+  #header .header-nav-main nav#lhw-mobile-nav.collapse.show {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    max-height: min(70vh, 520px) !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: none !important;
+  }
+
+  #header .header-nav-main nav#lhw-mobile-nav.collapsing {
+    display: block !important;
+    transition: none !important;
+  }
+
+  html.mobile-menu-opened #header .header-nav-main {
+    z-index: 1040;
+  }
+
+  html.mobile-menu-opened #header .header-body {
+    overflow: visible !important;
+  }
+}
+
+#header .header-logo img {
+  max-height: 48px;
+  width: auto;
+}
+
+/* Language trigger (header flags + EN) */
+.berkforte-porto-page #header .header-top,
+.berkforte-porto-page #header .header-nav-top {
+  position: relative;
+  z-index: 1045;
+  pointer-events: auto;
+}
+
+.berkforte-porto-page .lhw-lang-trigger {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
+  float: none !important;
+  position: relative;
+  left: auto !important;
+  color: #00b27a !important;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.berkforte-porto-page .lhw-lang-trigger .ls-flag {
+  display: block;
+  width: 22px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.berkforte-porto-page .lhw-lang-trigger .wpml-ls-native {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  line-height: 1;
+}
+
+.berkforte-porto-page #google_translate_element2,
+.berkforte-porto-page .goog-te-banner-frame,
+body.berkforte-public > .skiptranslate,
+body.berkforte-public iframe.skiptranslate,
+body.berkforte-public .skiptranslate iframe,
+body.berkforte-public .VIpgJd-ZVi9od-ORHb-OEVmcd,
+body.berkforte-public .VIpgJd-ZVi9od-xl07Ob-OEVmcd {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+body.berkforte-public #defaultModal .modal-body,
+body.berkforte-public #defaultModal a.gflag,
+body.berkforte-public #defaultModal select {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 1;
+}
+
+body.berkforte-public {
+  top: 0 !important;
+}
+
+/* Light House Wealth Card — 3D credit card block */
+.berkforte-porto-page section:has(.carding) .row {
+  align-items: center !important;
+}
+
+.berkforte-porto-page section:has(.carding) .col-lg-6.order-lg-2,
+.berkforte-porto-page section:has(.carding) .lhw-wealth-card-visual {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+  min-height: 240px;
+  transform: none !important;
+}
+
+@media (min-width: 992px) {
+  .berkforte-porto-page section:has(.carding) .col-lg-6.order-lg-2,
+  .berkforte-porto-page section:has(.carding) .lhw-wealth-card-visual {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    padding-bottom: 0;
+  }
+}
+
+.berkforte-porto-page section:has(.carding) .col-lg-6.order-lg-1 {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+@media (min-width: 992px) {
+  .berkforte-porto-page section:has(.carding) .col-lg-6.order-lg-1 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+.berkforte-porto-page .divall {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.berkforte-porto-page .carding {
+  width: min(100%, 360px);
+  height: calc(min(100%, 360px) * 190 / 320);
+  max-width: 360px;
+  margin: 0 auto;
+  perspective: none !important;
+}
+
+.berkforte-porto-page .carding .card__part {
+  width: 100%;
+  height: 100%;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+  transform-style: flat !important;
+  -webkit-transform-style: flat !important;
+}
+
+.berkforte-porto-page .carding .card__back {
+  display: none;
+}
+
+.berkforte-porto-page .carding:hover .card__front,
+.berkforte-porto-page .carding:hover .card__back {
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+.berkforte-porto-page .carding .card__square {
+  max-width: 100px;
+  width: auto !important;
+  height: 28px !important;
+  object-fit: contain;
+  object-position: left center;
+}
+
+@media (min-width: 992px) {
+  .berkforte-porto-page .carding {
+    width: 380px;
+    height: 226px;
+    max-width: 380px;
+  }
+
+  .berkforte-porto-page .carding .card__square {
+    max-width: 120px;
+    height: 30px !important;
+  }
+}

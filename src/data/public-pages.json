@@ -1,0 +1,354 @@
+{
+    "about": {
+        "title": "About us",
+        "subtitle": "Innovation at it's peak",
+        "intro": "At :brand, we believe that everyone should have the opportunity to invest in the stock market and achieve financial freedom. Founded by a team of passionate traders, we set out with the mission to democratize stock trading and make it accessible to individuals from all walks of life.",
+        "sections": [
+            {
+                "heading": "We want everyone to be able to fulfill their desires and opportunities.",
+                "paragraphs": [
+                    "Our team has created not just another project for traders. First of all, we developed a platform for the widest possible audience. For people who want to learn how to use advanced financial instruments and develop their financial skills.",
+                    "Speaking of tools. :brand provides over 400 free tools to each client so that you can trade and earn money the way you like. Choose any assets: currency quotes, stocks, majors, metals, oil or gas, as well as the main trend of recent years - cryptocurrencies."
+                ]
+            },
+            {
+                "heading": "What Sets Us Apart",
+                "bullets": [
+                    "Expertise: Our team comprises seasoned traders and financial experts who possess a deep understanding of the market.",
+                    "Cutting-Edge Technology: We pride ourselves on our state-of-the-art trading platform built with the latest technology.",
+                    "Educational Resources: We offer a wide range of educational resources to cater to traders of all levels.",
+                    "Customer Support: Our dedicated customer support team is available 24\/7 to address any questions or concerns."
+                ]
+            }
+        ],
+        "image": "main\/img\/about-us-modern.png"
+    },
+    "stocks": {
+        "title": "Stock Trading",
+        "subtitle": "Trading at it's peak",
+        "intro": "Unlock the power of the stock market with :brand, your ultimate destination for stock trading. Whether you're an experienced trader seeking to expand your portfolio or a beginner taking your first steps in the stock market, our platform provides you with the tools, resources, and support to make informed investment decisions.",
+        "sections": [
+            {
+                "heading": "Our world renowned trading strategy.",
+                "paragraphs": [
+                    "Unlock the power of the stock market with :brand, your ultimate destination for stock trading. Whether you're an experienced trader seeking to expand your portfolio or a beginner taking your first steps in the stock market, our platform provides you with the tools, resources, and support to make informed investment decisions."
+                ]
+            },
+            {
+                "heading": "Why Trade with :brand",
+                "bullets": [
+                    "Asia-Pacific coverage: Singapore, Hong Kong, Tokyo, Mumbai, Kuala Lumpur, Bangkok, and Seoul listings alongside global markets.",
+                    "Intuitive Trading Platform: Real-time market data, interactive charts, and customizable trading screens.",
+                    "Research and Analysis: Latest news, company reports, analyst recommendations, and stock screeners.",
+                    "Educational Resources: Articles, videos, and tutorials on fundamental analysis and trading strategies."
+                ]
+            }
+        ],
+        "image": "main\/img\/Stock-Exchange_1.png",
+        "showRegionalMarkets": true,
+        "marketsTitle": "Global equity charts",
+        "marketsLead": "Americas and Europe plus an Asia and Pacific watchlist: Hang Seng, Nikkei, DBS, HSBC, Tencent, HDFC Bank, Maybank, and more. Crypto and APAC FX pairs included."
+    },
+    "forex": {
+        "title": "Forex Trading",
+        "subtitle": "Welcome to Forex Trading at :brand",
+        "intro": "Experience the largest and most liquid financial market in the world with :brand's forex trading platform. Whether you're a seasoned forex trader or a beginner looking to enter the exciting world of currency trading, we provide you with the tools, resources, and support to participate in the forex market.",
+        "sections": [
+            {
+                "heading": "Explore the world of forex",
+                "paragraphs": [
+                    "Forex trading involves leverage, and we provide you with the necessary risk management tools to protect your capital. Set stop-loss and take-profit orders, manage your margin requirements, and implement risk management strategies to ensure responsible trading practices.",
+                    "Our customer support team is committed to providing exceptional assistance to forex traders. Whether you have questions about currency pairs, order execution, or trading platforms, our knowledgeable support staff is available 24\/7."
+                ]
+            },
+            {
+                "heading": "Why Trade Forex with :brand?",
+                "bullets": [
+                    "Global Market Access: Trade major, minor, and exotic currency pairs 24\/5.",
+                    "Advanced Trading Platform: Real-time pricing, fast execution, charting tools, and technical indicators.",
+                    "Educational Resources: Tutorials, webinars, and articles on strategies and risk management.",
+                    "Market Analysis: Stay updated on economic indicators, central bank decisions, and geopolitical events."
+                ]
+            }
+        ],
+        "image": "main\/img\/platform-bg.png",
+        "showRegionalMarkets": true
+    },
+    "futures": {
+        "title": "Futures Trading",
+        "subtitle": "Trading at it's peak",
+        "intro": "Are you ready to explore the exciting world of futures trading? :brand provides you with a comprehensive platform to trade futures contracts on various commodities, indices, and currencies.",
+        "sections": [
+            {
+                "heading": "Our world renowned trading strategy.",
+                "paragraphs": [
+                    "Ready to explore the potential of futures trading? Join :brand now and start trading futures contracts with confidence. With our user-friendly platform, comprehensive market analysis, and educational resources, you'll have the tools you need to seize futures trading opportunities."
+                ]
+            },
+            {
+                "heading": "Why Trade Futures with :brand",
+                "bullets": [
+                    "Diverse Range of Futures: Commodities, indices, and global market contracts.",
+                    "Advanced Trading Tools: Real-time data, charting, and technical analysis.",
+                    "Risk Management: Stop-loss orders, margin monitoring, and disciplined trading features.",
+                    "Educational Resources: Tutorials and webinars on strategies and contract specifications."
+                ]
+            }
+        ],
+        "image": "main\/img\/platform-bg.png"
+    },
+    "oilandgas": {
+        "title": "Oil and gas stock trading",
+        "subtitle": "A new way to trade",
+        "intro": "If you're interested in the dynamic and lucrative energy sector, :brand provides you with the opportunity to trade oil and gas stocks. Whether you want to invest in established energy companies or explore emerging players in the industry, our platform offers a range of oil and gas stocks to suit your investment goals.",
+        "sections": [
+            {
+                "heading": "Expert oil and gas stock trading.",
+                "paragraphs": [
+                    "Enhance your knowledge of the oil and gas industry and stock trading through our educational resources. Access articles, tutorials, and webinars that cover industry dynamics, fundamental analysis, and trading strategies.",
+                    "Our customer support team is ready to assist you with any questions or concerns related to oil and gas stock trading."
+                ]
+            },
+            {
+                "heading": "Green Energy stocks",
+                "bullets": [
+                    "Diverse Selection: Major industry players, exploration companies, refining firms, and service providers.",
+                    "Industry Insights: In-depth reports, trends, and news updates for the energy sector.",
+                    "Real-Time Market Data: Prices, volumes, and historical performance.",
+                    "Risk Management: Stop-loss orders and tools to protect investment capital."
+                ]
+            }
+        ],
+        "image": "main\/img\/start-trading-2.png"
+    },
+    "optioncopytrading": {
+        "title": "Options copy trading",
+        "subtitle": "Option Copy Trading",
+        "intro": ":brand has been sharing financial freedom with traders since 2014. In a continuous effort to give traders a more comfortable and safe experience, its experts have been improving the platform ensuring traders can enjoy and make use of that freedom to trade whenever and wherever they like.",
+        "sections": [
+            {
+                "heading": "Option Copy Trading",
+                "paragraphs": [
+                    "Copy trading is replicating another trader's positions using social platforms, automated tools and signals. Copy trading is a type of trading where you copy the trades performed by another, more experienced trader. It can be manual, semi-automatic or fully automatic.",
+                    "Copy trading allows individuals to automatically copy another trader's positions when they are opened or closed. Traders can copy positions in many markets, including forex, stocks and CFDs, including Bitcoin (BTC) or major precious metals such as Gold or Platinum."
+                ]
+            },
+            {
+                "heading": "Pros and Cons",
+                "bullets": [
+                    "Authorised practice: copy trading is recognised by key regulatory frameworks when using a licensed broker.",
+                    "Portfolio diversification: gain exposure to opportunities you would not usually consider alone.",
+                    "Risk: strategies can fail; losses can translate to follower accounts.",
+                    "Control: copying means entrusting part of your portfolio to another trader's decisions."
+                ]
+            },
+            {
+                "heading": "Risk",
+                "paragraphs": [
+                    "All types of trading are associated with risk. Never invest money you cannot afford to lose. Copying high-risk assets such as forex, crypto, or binary options carries higher risk; blue-chip strategies tend to be lower risk.",
+                    "A common beginner mistake is only copying one trader. Diversify by following more than one strategy to reduce concentration risk."
+                ]
+            }
+        ],
+        "image": "main\/img\/start-trading-1.png"
+    },
+    "advancetrading": {
+        "title": "Commodities trading",
+        "subtitle": "Metals, energy, and agriculture",
+        "intro": "Commodity markets give members a way to express views on inflation, industrial demand, and global supply chains. :brand connects education, live pricing context, and related futures and energy pages so you can build a coherent commodities workflow.",
+        "sections": [
+            {
+                "heading": "What you can explore",
+                "bullets": [
+                    "Precious and industrial metals alongside energy and agricultural themes.",
+                    "Links to futures contracts and oil and gas equity research on sibling pages.",
+                    "Risk tools: position sizing, stops, and margin awareness before you size a trade."
+                ]
+            },
+            {
+                "heading": "How it fits the platform",
+                "paragraphs": [
+                    "Commodities complement live stock and forex trading in the same member dashboard. Use the live trading terminal for supported symbols, or follow structured investment plans when a longer horizon fits your goal.",
+                    "Automated or rules-based strategies remain optional; many members prefer direct live execution with clear entry and exit rules."
+                ]
+            }
+        ],
+        "image": "main\/img\/start-trading-2.png"
+    },
+    "capital_insurance": {
+        "title": "Capital Insurance Scheme",
+        "subtitle": "Member capital protection program",
+        "intro": "The Capital Insurance Scheme explains how :brand treats qualifying wallet balances under defined operational coverage. It is separate from market risk on trades: losses from price movement are not reversed by the scheme, but covered operational events may be eligible for relief within published limits.",
+        "sections": [
+            {
+                "heading": "What the scheme is designed to address",
+                "bullets": [
+                    "Documented operational incidents affecting segregated member wallet balances, subject to investigation.",
+                    "Published per-account and per-event limits stated in the member agreement and scheme appendix.",
+                    "Clear eligibility: verified accounts in good standing with complete KYC where required."
+                ]
+            },
+            {
+                "heading": "What members should expect",
+                "paragraphs": [
+                    "Coverage is not a substitute for prudent position sizing or stop-loss discipline on live trades. Read the scheme summary, exclusions, and claims process before funding.",
+                    "Support can walk you through verification steps and where to find the latest scheme version inside your dashboard after registration."
+                ]
+            },
+            {
+                "heading": "Related protections",
+                "bullets": [
+                    "Two-factor authentication and account monitoring on the Insight page.",
+                    "Transparent plan terms for investment tiers, separate from insurance eligibility.",
+                    "24/7 support channels for account and verification questions."
+                ]
+            }
+        ],
+        "image": "main\/img\/5191079.jpg"
+    },
+    "livetrading": {
+        "title": "Live trading interface",
+        "subtitle": "Live Trading Interface",
+        "intro": ":brand is a software system offered to investors and traders by certain financial institutions, such as brokerages and banks. Trading platforms enable investors and traders to place trades and monitor their accounts.",
+        "sections": [
+            {
+                "heading": "Live Trading Interface",
+                "paragraphs": [
+                    "A trading platform is a software system that lets you trade online on your own. It gives investors an online interface to access various markets, place trades, monitor positions, and manage accounts.",
+                    "Platforms can offer real-time quotes, news feeds, streaming and historical data, technical analysis tools, investment research, and educational resources."
+                ]
+            },
+            {
+                "heading": "Why our live trading interface is important",
+                "bullets": [
+                    "Trading strategy: Disciplined criteria for entries, exits, and risk management.",
+                    "Market monitoring: Price movements, volumes, and news that impact target securities.",
+                    "Evaluate opportunities: Support, resistance, chart patterns, and trend analysis.",
+                    "Trading execution: Market and limit orders to capture short-term moves.",
+                    "Risk management: Stop-loss orders and position sizing.",
+                    "Closing positions: Manage overnight exposure according to your plan."
+                ]
+            },
+            {
+                "heading": "Swing Trading Tactics",
+                "paragraphs": [
+                    "Fast, reliable execution and competitive commissions matter for active traders. During fast-moving conditions, working with a broker that provides dependable order execution is essential."
+                ]
+            }
+        ],
+        "image": "main\/img\/start-trading-3.png"
+    },
+    "softwares": {
+        "title": "Software",
+        "subtitle": "Some of the softwares used for trading includes but not limited to the following:",
+        "intro": "",
+        "software_items": [
+            {
+                "name": ":brand Trade",
+                "body": ":brand Trade gives you every edge possible with the technology, rates, and support that help you succeed more easily on your own."
+            },
+            {
+                "name": "Tradier",
+                "body": "Tradier provides all the tools to help make investing easy. Our open collaboration platform allows investors to truly customize their trading experience."
+            },
+            {
+                "name": "Interactive Brokers",
+                "body": "Interactive Brokers is for sophisticated investors and active traders, with IB SmartRoutingSM to search for the best available prices across venues."
+            },
+            {
+                "name": "Magnifi",
+                "body": "Magnifi simplifies investing and democratizes investing intelligence."
+            },
+            {
+                "name": "Olive Invest",
+                "body": "Olive Invest helps improve performance by reducing volatility with option strategies."
+            },
+            {
+                "name": "EOption",
+                "body": "EOption was created with a clear purpose: low-cost trades combined with fast, efficient execution."
+            }
+        ],
+        "image": "main\/img\/brokerage_PlatformsPicks.png"
+    },
+    "investment": {
+        "title": "Insight",
+        "subtitle": "Account Security",
+        "intro": "Two-factor authentication (2FA) is an essential security measure for financial services to protect user accounts and transactions. It adds an extra layer of security by requiring users to provide two forms of identification before accessing their accounts.",
+        "sections": [
+            {
+                "heading": "Two factor authentication",
+                "bullets": [
+                    "Enhanced Security: 2FA adds an extra layer beyond usernames and passwords.",
+                    "Protection Against Credential Theft: A separate authentication factor is difficult for attackers to replicate.",
+                    "Convenience: Mobile authenticator apps generate time-based one-time passwords for quick, secure login."
+                ]
+            }
+        ],
+        "image": "main\/img\/5191079.jpg"
+    },
+    "mirror_trading": {
+        "title": "Mirror Trading",
+        "subtitle": "Mirror Trading",
+        "intro": "Ready to dive into the world of stocks? Join :brand today and embark on an exciting journey toward financial success. Sign up now and gain access to a world of opportunities.",
+        "sections": [
+            {
+                "heading": "Regulatory notice",
+                "paragraphs": [
+                    ":brand is regulated by the Seychelles Financial Services Authority (FSA) with Securities Dealer's license number SD018"
+                ]
+            }
+        ],
+        "image": "main\/img\/about-us-desires.png"
+    },
+    "asset_class": {
+        "title": "Asset Class",
+        "subtitle": "Diversify your portfolio",
+        "intro": "At :brand, we understand the importance of diversifying your investment portfolio and exploring different avenues for potential returns.",
+        "sections": [
+            {
+                "heading": "Understanding asset classes",
+                "paragraphs": [
+                    "At :brand, we understand the importance of diversifying your investment portfolio and exploring different avenues for potential returns. An asset class refers to a group of financial instruments or investments that share similar characteristics and behave in a comparable manner within the market.",
+                    "Diversifying across asset classes is a fundamental principle of risk management and can help you optimize your investment strategy. By allocating your funds across various asset classes, such as stocks, bonds, commodities, real estate, and more, you can potentially reduce the overall risk exposure of your portfolio.",
+                    "Each asset class has its unique characteristics, risk profile, and potential for returns. Stocks offer the opportunity to participate in the growth of individual companies and the broader market. Bonds provide fixed income and can offer stability and income generation. Commodities, such as oil, gold, and agricultural products, can act as a hedge against inflation and provide diversification. Real estate offers the potential for capital appreciation and rental income.",
+                    "By understanding the different asset classes and their dynamics, you can create a well-balanced portfolio that aligns with your financial goals, risk tolerance, and time horizon. Our platform at :brand provides you with access to a wide range of asset classes, enabling you to explore and diversify your investment opportunities.",
+                    "Remember, diversification is key to mitigating risk and maximizing potential returns. Consult with our expert advisors and leverage our educational resources to gain a deeper understanding of asset classes and construct a diversified portfolio that suits your investment objectives. Start exploring different asset classes and take control of your financial future with :brand today."
+                ]
+            }
+        ],
+        "image": "main\/img\/about-us-modern.png"
+    },
+    "statistics": {
+        "title": "Statistics",
+        "subtitle": "Platform activity",
+        "intro": "Transparent metrics across our client base. Funding, trading, and account growth reflect the activity of registered clients on :brand.",
+        "image": "main\/img\/reviews-appraisals.png"
+    },
+    "terms": {
+        "title": "Terms and Conditions",
+        "intro": "This Terms & Conditions relates to how we collect, use, share and secure the personal information that you may supply to us. It also describes your choices regarding use, access and correction of your personal information.",
+        "paragraphs": [
+            "We recognise the importance of protecting the privacy of information collected by us, in particular, information that is capable of identifying an individual (\"personal information\").",
+            "This Terms & Conditions governs the manner in which your personal information will be dealt with. :brand is the entity collecting and holding your personal information in accordance with this Terms & Conditions.",
+            "By using this website, you agree to the Terms & Conditions of :brand. This website may contain links to third-party sites not operated by us.",
+            "We may collect personal information through your use of our website, support channels, email, telephone, and other interactions with us, in order to provide services and meet legal obligations."
+        ]
+    },
+    "privacy": {
+        "title": "Privacy",
+        "intro": "The Privacy Policy relates to how :brand collects, uses, shares and secures personal information you supply to us.",
+        "paragraphs": [
+            "We recognise the importance of protecting the privacy of information collected by us, in particular, information that is capable of identifying an individual (\"personal information\").",
+            "We reserve the right, at our discretion, to modify or remove portions of this policy at any time. Continued use of the site constitutes acceptance of the current policy.",
+            "For the full legal text or questions, please contact support through the Contacts page."
+        ]
+    },
+    "contact": {
+        "title": "Contacts",
+        "subtitle": "SUPPORT SERVICE",
+        "support_lead": ":brand support specialists are happy to answer any questions you may have.",
+        "address": "FLAT 28 SNOWMAN HOUSE ABBEY ROAD LONDON ENGLAND NW6 4DN",
+        "phone": "+1 (774) 318-4338",
+        "phone_href": "tel:+17743184338"
+    }
+}
