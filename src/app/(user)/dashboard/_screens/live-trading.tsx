@@ -1,6 +1,7 @@
 import { syncTrades } from "@/actions/user/syncTrade";
 import { PageHeader } from "@/components/dashboard/PageHeader";
 import { PageIcons } from "@/lib/icons/page-icons";
+import { isSelfTradeEnabled } from "@/lib/site/settings";
 import { db } from "@/lib/db";
 import { getSession } from "@/lib/session";
 import { loadTradingAssetsWithPrices } from "@/lib/trading/assets";
@@ -14,7 +15,7 @@ export default async function LiveTradingPage() {
   const settings = await db.siteSettings.findUnique({
     where: { id: "default" },
   });
-  if (settings && !settings.enableSelfTrade) {
+  if (!isSelfTradeEnabled(settings)) {
     redirect("/dashboard");
   }
 

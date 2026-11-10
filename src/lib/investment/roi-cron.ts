@@ -1,5 +1,6 @@
 import { sendPlanClosedEmail, sendRoiEmail } from "@/lib/email/zenith-notifications";
 import { db } from "@/lib/db";
+import { isGlobalTradingEnabled } from "@/lib/site/settings";
 import { Prisma } from "@/generated/prisma";
 import {
   computeIncrement,
@@ -162,7 +163,7 @@ export async function runAutomaticRoi(userId?: string): Promise<RoiCronResult> {
   const settings = await db.siteSettings.findUnique({
     where: { id: "default" },
   });
-  if (!settings?.tradeMode) {
+  if (!isGlobalTradingEnabled(settings)) {
     return result;
   }
 

@@ -16,6 +16,9 @@ async function main() {
       enableSelfTrade: true,
       enableInvestmentPlans: true,
       enableKyc: true,
+      tradeMode: true,
+      weekendTrade: true,
+      returnCapital: true,
     },
     update: {},
   });

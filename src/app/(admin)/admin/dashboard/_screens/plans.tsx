@@ -22,6 +22,7 @@ import {
   summarizeAdminRoiRecords,
 } from "@/lib/investment/admin-plans";
 import { db } from "@/lib/db";
+import { isGlobalTradingEnabled } from "@/lib/site/settings";
 import { RunCronClient } from "../plans/RunCronClient";
 import { RoiRecordsTable } from "../plans/RoiRecordsTable";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -199,9 +200,9 @@ export default async function AdminInvestmentPlansPage({
       <p className="text-xs text-muted-foreground">
         Global trade mode:{" "}
         <span className="font-medium text-foreground">
-          {settings?.tradeMode ? "On" : "Off"}
+          {isGlobalTradingEnabled(settings) ? "On" : "Off"}
         </span>
-        {settings && !settings.tradeMode ? (
+        {!isGlobalTradingEnabled(settings) ? (
           <span> Automatic ROI will not credit until enabled in site settings.</span>
         ) : null}
       </p>

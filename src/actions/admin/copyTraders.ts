@@ -91,3 +91,59 @@ export async function setCopyTraderActiveAdmin(
   revalidatePath(COPY_TRADERS_PATH);
   return { ok: true as const };
 }
+
+export async function updateCopyTraderStatsAdmin(
+  traderId: number,
+  input: {
+    followers?: number;
+    totalTrades?: number;
+    winRate?: number | null;
+  },
+) {
+  await requireAdmin();
+
+  const data: {
+    followers?: number;
+    totalTrades?: number;
+    winRate?: number | null;
+  } = {};
+
+  if (input.followers !== undefined) {
+    if (!Number.isFinite(input.followers) || input.followers < 0) {
+      throw new Error("Followers must be 0 or greater.");
+    }
+    data.followers = Math.floor(input.followers);
+  }
+  if (input.totalTrades !== undefined) {
+    if (!Number.isFinite(input.totalTrades) || input.totalTrades < 0) {
+      throw new Error("Total trades must be 0 or greater.");
+    }
+    data.totalTrades = Math.floor(input.totalTrades);
+  }
+  if (input.winRate !== undefined) {
+    if (input.winRate === null) {
+      data.winRate = null;
+    } else if (
+      !Number.isFinite(input.winRate) ||
+      input.winRate < 0 ||
+      input.winRate > 100
+    ) {
+      throw new Error("Win rate must be between 0 and 100.");
+    } else {
+      data.winRate = input.winRate;
+    }
+  }
+
+  if (Object.keys(data).length === 0) {
+    throw new Error("Nothing to update.");
+  }
+
+  await db.trader.update({
+    where: { id: traderId },
+    data,
+  });
+
+  revalidatePath(COPY_TRADERS_PATH);
+  revalidatePath("/dashboard/copy");
+  return { ok: true as const };
+}

@@ -15,17 +15,19 @@ import {
   createCopyTraderAdmin,
   emitCopyTradeAdmin,
   setCopyTraderActiveAdmin,
+  updateCopyTraderStatsAdmin,
   type AdminTraderRow,
 } from "@/actions/admin/copyTraders";
 import { Loader2, Plus, Send } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 export function CopyTradersAdminClient({ traders }: { traders: AdminTraderRow[] }) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [emittingId, setEmittingId] = useState<number | null>(null);
+  const [savingStatsId, setSavingStatsId] = useState<number | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -88,6 +90,30 @@ export function CopyTradersAdminClient({ traders }: { traders: AdminTraderRow[] 
         router.refresh();
       } catch (e) {
         toast.error(e instanceof Error ? e.message : "Could not create trader");
+      }
+    });
+  }
+
+  function saveStats(
+    traderId: number,
+    followers: string,
+    totalTrades: string,
+    winRate: string,
+  ) {
+    setSavingStatsId(traderId);
+    startTransition(async () => {
+      try {
+        await updateCopyTraderStatsAdmin(traderId, {
+          followers: Number(followers),
+          totalTrades: Number(totalTrades),
+          winRate: winRate.trim() === "" ? null : Number(winRate),
+        });
+        toast.success("Trader stats updated");
+        router.refresh();
+      } catch (e) {
+        toast.error(e instanceof Error ? e.message : "Update failed");
+      } finally {
+        setSavingStatsId(null);
       }
     });
   }
@@ -187,6 +213,34 @@ export function CopyTradersAdminClient({ traders }: { traders: AdminTraderRow[] 
               }
             />
           </div>
+          <div className="space-y-2">
+            <Label htmlFor="followers">Followers (display)</Label>
+            <Input
+              id="followers"
+              type="number"
+              min={0}
+              step={1}
+              value={form.followers}
+              onChange={(e) =>
+                setForm((f) => ({ ...f, followers: e.target.value }))
+              }
+              placeholder="e.g. 1250"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="total-trades">Total trades (display)</Label>
+            <Input
+              id="total-trades"
+              type="number"
+              min={0}
+              step={1}
+              value={form.totalTrades}
+              onChange={(e) =>
+                setForm((f) => ({ ...f, totalTrades: e.target.value }))
+              }
+              placeholder="e.g. 480"
+            />
+          </div>
           <div className="sm:col-span-2">
             <Button
               type="button"
@@ -211,56 +265,160 @@ export function CopyTradersAdminClient({ traders }: { traders: AdminTraderRow[] 
         <ul className="space-y-3">
           {traders.map((t) => {
             const busy = pending && emittingId === t.id;
+            const savingStats = pending && savingStatsId === t.id;
             return (
-              <li
+              <TraderStatsRow
                 key={t.id}
-                className="flex flex-col gap-3 rounded-xl border border-border px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <div className="min-w-0 space-y-1">
-                  <p className="font-medium">
-                    {t.name}{" "}
-                    <span className="text-muted-foreground font-normal">
-                      · {t.market}
-                    </span>
-                  </p>
-                  {t.description ? (
-                    <p className="text-xs text-muted-foreground line-clamp-2">
-                      {t.description}
-                    </p>
-                  ) : null}
-                  <p className="text-xs text-muted-foreground">
-                    {t.activeCopiers} active copier
-                    {t.activeCopiers === 1 ? "" : "s"}
-                    {!t.isActive ? " · Profile inactive (emit disabled)" : ""}
-                  </p>
-                </div>
-                <div className="flex flex-wrap items-center gap-3 shrink-0">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <Checkbox
-                      checked={t.isActive}
-                      disabled={pending}
-                      onCheckedChange={(v) => toggleActive(t, v === true)}
-                    />
-                    <span className="text-xs text-muted-foreground">Active</span>
-                  </label>
-                  <Button
-                    size="sm"
-                    disabled={!t.isActive || busy}
-                    onClick={() => emit(t.id)}
-                  >
-                    {busy ? (
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    ) : (
-                      <Send className="mr-2 h-4 w-4" strokeWidth={2} />
-                    )}
-                    Emit trade
-                  </Button>
-                </div>
-              </li>
+                trader={t}
+                busy={busy}
+                savingStats={savingStats}
+                pending={pending}
+                onEmit={() => emit(t.id)}
+                onToggleActive={(next) => toggleActive(t, next)}
+                onSaveStats={(followers, totalTrades, winRate) =>
+                  saveStats(t.id, followers, totalTrades, winRate)
+                }
+              />
             );
           })}
         </ul>
       )}
     </div>
+  );
+}
+
+function TraderStatsRow({
+  trader: t,
+  busy,
+  savingStats,
+  pending,
+  onEmit,
+  onToggleActive,
+  onSaveStats,
+}: {
+  trader: AdminTraderRow;
+  busy: boolean;
+  savingStats: boolean;
+  pending: boolean;
+  onEmit: () => void;
+  onToggleActive: (next: boolean) => void;
+  onSaveStats: (
+    followers: string,
+    totalTrades: string,
+    winRate: string,
+  ) => void;
+}) {
+  const [followers, setFollowers] = useState(String(t.followers));
+  const [totalTrades, setTotalTrades] = useState(String(t.totalTrades));
+  const [winRate, setWinRate] = useState(
+    t.winRate != null ? String(t.winRate) : "",
+  );
+
+  useEffect(() => {
+    setFollowers(String(t.followers));
+    setTotalTrades(String(t.totalTrades));
+    setWinRate(t.winRate != null ? String(t.winRate) : "");
+  }, [t.followers, t.totalTrades, t.winRate]);
+
+  return (
+    <li className="flex flex-col gap-4 rounded-xl border border-border px-4 py-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0 space-y-1">
+          <p className="font-medium">
+            {t.name}{" "}
+            <span className="text-muted-foreground font-normal">
+              · {t.market}
+            </span>
+          </p>
+          {t.description ? (
+            <p className="text-xs text-muted-foreground line-clamp-2">
+              {t.description}
+            </p>
+          ) : null}
+          <p className="text-xs text-muted-foreground">
+            {t.activeCopiers} active copier
+            {t.activeCopiers === 1 ? "" : "s"}
+            {!t.isActive ? " · Profile inactive (emit disabled)" : ""}
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <label className="flex cursor-pointer items-center gap-2">
+            <Checkbox
+              checked={t.isActive}
+              disabled={pending}
+              onCheckedChange={(v) => onToggleActive(v === true)}
+            />
+            <span className="text-xs text-muted-foreground">Active</span>
+          </label>
+          <Button
+            size="sm"
+            disabled={!t.isActive || busy}
+            onClick={onEmit}
+          >
+            {busy ? (
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              <Send className="mr-2 h-4 w-4" strokeWidth={2} />
+            )}
+            Emit trade
+          </Button>
+        </div>
+      </div>
+      <div className="grid gap-3 border-t border-border pt-3 sm:grid-cols-4">
+        <div className="space-y-1.5">
+          <Label htmlFor={`followers-${t.id}`} className="text-xs">
+            Followers
+          </Label>
+          <Input
+            id={`followers-${t.id}`}
+            type="number"
+            min={0}
+            value={followers}
+            onChange={(e) => setFollowers(e.target.value)}
+          />
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor={`trades-${t.id}`} className="text-xs">
+            Total trades
+          </Label>
+          <Input
+            id={`trades-${t.id}`}
+            type="number"
+            min={0}
+            value={totalTrades}
+            onChange={(e) => setTotalTrades(e.target.value)}
+          />
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor={`win-${t.id}`} className="text-xs">
+            Win rate %
+          </Label>
+          <Input
+            id={`win-${t.id}`}
+            type="number"
+            min={0}
+            max={100}
+            value={winRate}
+            onChange={(e) => setWinRate(e.target.value)}
+            placeholder="Optional"
+          />
+        </div>
+        <div className="flex items-end">
+          <Button
+            type="button"
+            size="sm"
+            variant="secondary"
+            className="w-full"
+            disabled={pending || savingStats}
+            onClick={() => onSaveStats(followers, totalTrades, winRate)}
+          >
+            {savingStats ? (
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            ) : null}
+            Save stats
+          </Button>
+        </div>
+      </div>
+    </li>
   );
 }

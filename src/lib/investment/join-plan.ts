@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { isGlobalTradingEnabled } from "@/lib/site/settings";
 import { revalidatePath } from "next/cache";
 
 export async function joinInvestmentPlan(
@@ -13,7 +14,7 @@ export async function joinInvestmentPlan(
   ]);
 
   if (!user || !plan) throw new Error("Invalid user or plan.");
-  if (!settings?.tradeMode || user.tradeMode !== "on") {
+  if (!isGlobalTradingEnabled(settings) || user.tradeMode !== "on") {
     throw new Error("Trading is disabled.");
   }
   if (amount < plan.minPrice || amount > plan.maxPrice) {

@@ -1,6 +1,7 @@
 import { getSession } from "@/lib/session";
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
+import { isCopyTradingEnabled } from "@/lib/site/settings";
 import { PageHeader } from "@/components/dashboard/PageHeader";
 import { PageIcons } from "@/lib/icons/page-icons";
 import { CopyTradersClient } from "../copy/CopyTradersClient";
@@ -15,7 +16,7 @@ export default async function CopyTradingPage() {
   const settings = await db.siteSettings.findUnique({
     where: { id: "default" },
   });
-  if (settings && !settings.enableCopyTrading) {
+  if (!isCopyTradingEnabled(settings)) {
     redirect("/dashboard");
   }
 
