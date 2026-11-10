@@ -10,7 +10,7 @@ npm run dev
 ``` 
 
 Open [http://localhost:3000](http://localhost:3000).
-
+  
 ## Database
 
 See [docs/DATABASE_SETUP.md](docs/DATABASE_SETUP.md).
